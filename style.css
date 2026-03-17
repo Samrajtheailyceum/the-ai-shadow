@@ -1,0 +1,282 @@
+/* THE AI SHADOW — Typographic Stylesheet */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  --bg: #faf9f6;
+  --bg-dark: #1a1a2e;
+  --text: #2c2c2c;
+  --text-muted: #666;
+  --accent: #8b4513;
+  --accent-light: #d4a574;
+  --border: #e0ddd5;
+  --shadow-color: rgba(0,0,0,0.08);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 18px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.75;
+  max-width: 52rem;
+  margin: 0 auto;
+  padding: 3rem 2rem 6rem;
+}
+
+/* Title hierarchy */
+h1 {
+  font-size: 3.2rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 4rem 0 0.5rem;
+  color: var(--bg-dark);
+  line-height: 1.1;
+}
+
+h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin: 3.5rem 0 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--border);
+  letter-spacing: 0.03em;
+}
+
+h3 {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--bg-dark);
+  margin: 2.5rem 0 1rem;
+  letter-spacing: 0.02em;
+}
+
+h4 {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  margin: 2rem 0 0.75rem;
+}
+
+/* Subtitle / center-aligned text after h1 */
+h1 + h2 {
+  border: none;
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+  padding-bottom: 0;
+}
+
+h1 + h2 + h3 {
+  text-align: center;
+  font-weight: 400;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+  font-size: 1.15rem;
+}
+
+/* Paragraphs */
+p {
+  margin: 1.25rem 0;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* Blockquotes — epigraphs */
+blockquote {
+  margin: 2.5rem 2rem;
+  padding: 1.25rem 1.5rem;
+  border-left: 3px solid var(--accent-light);
+  background: rgba(139, 69, 19, 0.03);
+  font-style: italic;
+  color: var(--text-muted);
+}
+
+blockquote p {
+  text-align: left;
+  margin: 0.5rem 0;
+}
+
+/* Horizontal rules — section breaks */
+hr {
+  border: none;
+  height: 1px;
+  background: var(--border);
+  margin: 3rem auto;
+  width: 40%;
+}
+
+/* Code blocks — for prompts */
+pre {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 0.78rem;
+  line-height: 1.6;
+  background: #f5f2eb;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1.5rem;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+
+code {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 0.85em;
+  background: #f5f2eb;
+  padding: 0.15em 0.35em;
+  border-radius: 3px;
+}
+
+pre code {
+  background: none;
+  padding: 0;
+}
+
+/* Stage directions — italic emphasis */
+em {
+  font-style: italic;
+  color: var(--text-muted);
+}
+
+/* Strong — speaker names */
+strong {
+  font-weight: 700;
+  color: var(--bg-dark);
+}
+
+/* Dialogue speaker labels */
+p:has(> strong:first-child) {
+  text-indent: 0;
+}
+
+/* Lists */
+ul, ol {
+  margin: 1rem 0 1rem 2rem;
+}
+
+li {
+  margin: 0.5rem 0;
+}
+
+/* Table of Contents */
+nav#TOC {
+  background: #f5f2eb;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 2rem 2.5rem;
+  margin: 3rem 0;
+}
+
+nav#TOC > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: toc-counter;
+}
+
+nav#TOC > ul > li {
+  counter-increment: toc-counter;
+  margin: 0.4rem 0;
+}
+
+nav#TOC a {
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.2s;
+}
+
+nav#TOC a:hover {
+  color: var(--bg-dark);
+}
+
+/* Links */
+a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+
+a:hover {
+  border-bottom-color: var(--accent);
+}
+
+/* Framework sections — special styling for the numbered frameworks */
+h3:has(+ p > strong:first-child) {
+  color: var(--accent);
+}
+
+/* Movement titles — special treatment */
+h2[id^="movement"] {
+  text-align: center;
+  border-bottom: none;
+  font-size: 2rem;
+  margin-top: 5rem;
+  letter-spacing: 0.05em;
+}
+
+/* Print styles */
+@media print {
+  body {
+    font-size: 11pt;
+    max-width: 100%;
+    padding: 0;
+  }
+
+  h1 { font-size: 28pt; }
+  h2 { font-size: 18pt; break-before: page; }
+
+  pre {
+    font-size: 8pt;
+    white-space: pre-wrap;
+  }
+
+  nav#TOC {
+    break-after: page;
+  }
+
+  blockquote {
+    border-left-width: 2px;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  html { font-size: 16px; }
+  body { padding: 1.5rem 1rem; }
+  h1 { font-size: 2.2rem; }
+  blockquote { margin: 1.5rem 0.5rem; }
+  pre { padding: 1rem; font-size: 0.72rem; }
+}
+
+/* Fade-in animation */
+@media (prefers-reduced-motion: no-preference) {
+  body {
+    animation: fadeIn 0.8s ease-in;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
