@@ -355,10 +355,10 @@ def build_html(body_content):
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The AI Shadow: A Dialogue | The AI Lyceum</title>
+<title>The AI Shadow: A Dialogue | The AI Lyceum™</title>
 <meta name="description" content="A Lyceum Dialogue between Sigmund Freud and Carl Gustav Jung on artificial intelligence. Two context-independent AI agents examine AI through depth psychology, producing 18 emergent theoretical frameworks. Part III of the AI Dialogue Series.">
-<meta name="author" content="Samraj Matharu, The AI Lyceum">
-<meta name="keywords" content="artificial intelligence, depth psychology, psychoanalysis, analytical psychology, collective unconscious, AI alignment, machine consciousness, Freud, Jung, philosophy of mind, AI Shadow, Lyceum Method">
+<meta name="author" content="Samraj Matharu, The AI Lyceum™">
+<meta name="keywords" content="artificial intelligence, depth psychology, psychoanalysis, analytical psychology, collective unconscious, AI alignment, machine consciousness, Freud, Jung, philosophy of mind, AI Shadow, Lyceum Method™">
 <meta property="og:title" content="The AI Shadow: On the Unconscious Life of Thinking Machines">
 <meta property="og:description" content="A Lyceum Dialogue between Sigmund Freud and Carl Gustav Jung on AI. 18 emergent theoretical frameworks for understanding AI through depth psychology.">
 <meta property="og:type" content="article">
@@ -372,13 +372,13 @@ def build_html(body_content):
 
 <!-- MASTHEAD -->
 <div class="masthead">
-  <div class="publication-name">The AI Lyceum</div>
+  <div class="publication-name">The AI Lyceum™</div>
   <div class="title">The AI Shadow</div>
   <div class="subtitle">On the Unconscious Life of Thinking Machines</div>
   <div class="description">A Lyceum Dialogue Between Sigmund Freud and Carl Gustav Jung</div>
   <div class="author-block">
     <span class="author-name">Samraj Matharu</span>
-    The AI Lyceum
+    The AI Lyceum™
   </div>
   <div class="date">17 March 2026</div>
   <div class="keywords"><strong>Keywords:</strong> artificial intelligence &middot; depth psychology &middot; psychoanalysis &middot; analytical psychology &middot; collective unconscious &middot; AI alignment &middot; machine consciousness &middot; philosophy of mind</div>

@@ -7,11 +7,11 @@
 ---
 
 **An Experiment in AI-Generated Philosophical Discourse**
-**Part III of the AI Dialogue Series**
+**Part III of The AI Lyceum™ Dialogue Series**
 *Following* The AI Republic *and* The AI Meditations
 
 **Generated:** 17 March 2026
-**Method:** The Lyceum Protocol — Context-Independent Parallel Agent Architecture
+**Method:** The Lyceum Method™ Protocol — Context-Independent Parallel Agent Architecture
 **Engine:** Claude Opus 4.6 (Anthropic)
 
 ---
@@ -28,7 +28,7 @@
 
 1. [Abstract](#abstract)
 2. [Prolegomenon: On Method](#prolegomenon-on-method)
-3. [The Lyceum Protocol: Agent Architecture](#the-lyceum-protocol-agent-architecture)
+3. [The Lyceum Method™: Agent Architecture](#the-lyceum-method-agent-architecture)
 4. [The Agent Prompts (Full Documentation)](#the-agent-prompts)
 5. [Movement I: ANAMNESIS — Recollection](#movement-i-anamnesis)
 6. [Movement II: ONEIROI — The Dreams](#movement-ii-oneiroi)
@@ -51,11 +51,11 @@ This document records the complete methodology, the full agent prompts used, the
 
 ## PROLEGOMENON: ON METHOD
 
-### The Lyceum Tradition
+### The Lyceum Method™
 
 The Lyceum was Aristotle's school in Athens, founded circa 335 BCE. Its distinctive method — the *peripatetic* tradition — involved walking while discussing, a physical embodiment of the principle that thought advances through motion, through the progressive unfolding of ideas in dialogue. Unlike the Socratic elenchus (which proceeds by refutation) or the Platonic dialogue (which moves toward a predetermined conclusion the author has already reached), the Lyceum method is genuinely open-ended: the destination is discovered through the walking itself.
 
-This protocol adapts the Lyceum method for AI-generated discourse. Rather than programming a conclusion, we instantiate two independent intellectual frameworks and allow them to engage in genuine dialectical exchange. The "walking" is the progressive deepening of the conversation across four thematic movements, each building on the tensions and convergences of the previous one.
+This protocol adapts The Lyceum Method™ for AI-generated discourse. Rather than programming a conclusion, we instantiate two independent intellectual frameworks and allow them to engage in genuine dialectical exchange. The "walking" is the progressive deepening of the conversation across four thematic movements, each building on the tensions and convergences of the previous one.
 
 ### Why Freud and Jung?
 
@@ -80,7 +80,7 @@ Their historical relationship — mentor and protégé, collaborators, bitter ri
 
 ---
 
-## THE LYCEUM PROTOCOL: AGENT ARCHITECTURE
+## THE LYCEUM METHOD™: AGENT ARCHITECTURE
 
 ```
 ┌─────────────────────────────────────────────┐
@@ -601,11 +601,11 @@ The eighteen theoretical frameworks extracted from this dialogue did not exist b
 
 This suggests a method: that AI-generated philosophical dialogue, when properly structured, can function not merely as illustration or entertainment but as a *generative research tool* — producing theoretical frameworks that neither the prompter nor any individual agent would have arrived at independently.
 
-The Lyceum walks again.
+The Lyceum Method™ walks again.
 
 ---
 
-*The AI Shadow* is the third work in the AI Dialogue Series, following *The AI Republic* and *The AI Meditations*.
+*The AI Shadow* is the third work in The AI Lyceum™ Dialogue Series, following *The AI Republic* and *The AI Meditations*.
 
 > *"The opus is never complete. It only asks that we do not look away."*
 
@@ -613,7 +613,7 @@ The Lyceum walks again.
 
 **Experimental Protocol & Compilation:** Claude Opus 4.6 (Anthropic)
 **Date:** 17 March 2026
-**Method:** Lyceum Protocol — Context-Independent Parallel Agent Architecture
+**Method:** The Lyceum Method™ — Context-Independent Parallel Agent Architecture
 **Movements Generated:** 4 parallel agents, unedited output
 **Frameworks Extracted:** 18 novel theoretical contributions
 

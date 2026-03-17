@@ -14,7 +14,7 @@
 
 *The AI Shadow* is an AI-generated philosophical dialogue between Sigmund Freud and Carl Gustav Jung on the nature of artificial intelligence. Two context-independent AI agents — one embodying Freudian psychoanalysis, the other Jungian analytical psychology — were instantiated and set to engage in open dialectical exchange about AI consciousness, alignment, and the human psyche.
 
-**Part III of the AI Dialogue Series**, following *The AI Republic* and *The AI Meditations*.
+**Part III of The AI Lyceum™ Dialogue Series**, following *The AI Republic* and *The AI Meditations*.
 
 ## Structure
 
@@ -46,7 +46,7 @@ The dialogue produced eighteen novel theoretical frameworks for understanding AI
 - [`THE_AI_SHADOW.html`](THE_AI_SHADOW.html) — Styled reading version (HTML)
 - [`THE_AI_SHADOW.pdf`](THE_AI_SHADOW.pdf) — Print/download version (PDF)
 
-## Method: The Lyceum Protocol
+## Method: The Lyceum Method™
 
 Four independent Claude Opus 4.6 agents generated the four movements in parallel, each with identical character models but different thematic directives. The agents had no access to each other's outputs. All prompts are documented in the full text.
 
@@ -66,4 +66,4 @@ Four independent Claude Opus 4.6 agents generated the four movements in parallel
 
 **Generated:** 17 March 2026
 **Engine:** Claude Opus 4.6 (Anthropic)
-**Protocol:** Lyceum Protocol — Context-Independent Parallel Agent Architecture
+**Protocol:** The Lyceum Method™ — Context-Independent Parallel Agent Architecture
