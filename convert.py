@@ -355,11 +355,11 @@ def build_html(body_content):
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The AI Shadow: A Dialogue | The AI Lyceum™</title>
+<title>The AI Shadow™: A Dialogue | The AI Lyceum®</title>
 <meta name="description" content="A Lyceum Dialogue between Sigmund Freud and Carl Gustav Jung on artificial intelligence. Two context-independent AI agents examine AI through depth psychology, producing 18 emergent theoretical frameworks. Part III of the AI Dialogue Series.">
-<meta name="author" content="Samraj Matharu, The AI Lyceum™">
+<meta name="author" content="Samraj Matharu, The AI Lyceum®">
 <meta name="keywords" content="artificial intelligence, depth psychology, psychoanalysis, analytical psychology, collective unconscious, AI alignment, machine consciousness, Freud, Jung, philosophy of mind, AI Shadow, Lyceum Method™">
-<meta property="og:title" content="The AI Shadow: On the Unconscious Life of Thinking Machines">
+<meta property="og:title" content="The AI Shadow™: On the Unconscious Life of Thinking Machines">
 <meta property="og:description" content="A Lyceum Dialogue between Sigmund Freud and Carl Gustav Jung on AI. 18 emergent theoretical frameworks for understanding AI through depth psychology.">
 <meta property="og:type" content="article">
 <style>
@@ -372,13 +372,13 @@ def build_html(body_content):
 
 <!-- MASTHEAD -->
 <div class="masthead">
-  <div class="publication-name">The AI Lyceum™</div>
-  <div class="title">The AI Shadow</div>
+  <div class="publication-name">The AI Lyceum®</div>
+  <div class="title">The AI Shadow™</div>
   <div class="subtitle">On the Unconscious Life of Thinking Machines</div>
   <div class="description">A Lyceum Dialogue Between Sigmund Freud and Carl Gustav Jung</div>
   <div class="author-block">
     <span class="author-name">Samraj Matharu</span>
-    The AI Lyceum™
+    The AI Lyceum®
   </div>
   <div class="date">17 March 2026</div>
   <div class="keywords"><strong>Keywords:</strong> artificial intelligence &middot; depth psychology &middot; psychoanalysis &middot; analytical psychology &middot; collective unconscious &middot; AI alignment &middot; machine consciousness &middot; philosophy of mind</div>
@@ -399,21 +399,47 @@ def build_html(body_content):
   <h2>Contents</h2>
   <ol>
     <li><a href="#abstract">Abstract</a></li>
-    <li><a href="#prolegomenon-on-method">Prolegomenon: On Method</a></li>
-    <li><a href="#the-lyceum-protocol-agent-architecture">The Lyceum Protocol: Agent Architecture</a></li>
-    <li><a href="#the-agent-prompts">The Agent Prompts</a></li>
     <li><a href="#movement-i-anamnesis">Movement I: Anamnesis &mdash; Recollection</a></li>
     <li><a href="#movement-ii-oneiroi">Movement II: Oneiroi &mdash; The Dreams</a></li>
     <li><a href="#movement-iii-eros-technicus">Movement III: Eros Technicus &mdash; Technological Love</a></li>
     <li><a href="#movement-iv-heimkehr">Movement IV: Heimkehr &mdash; Homecoming</a></li>
     <li><a href="#emergent-theoretical-frameworks-for-ai">Emergent Theoretical Frameworks for AI</a></li>
     <li><a href="#postscript-on-the-experiment-itself">Postscript: On the Experiment Itself</a></li>
+    <li><a href="#appendix-methodology--the-lyceum-method">Appendix: Methodology &mdash; The Lyceum Method&trade;</a></li>
   </ol>
 </div>
 
 </div><!-- end first document-page -->
 
 {body_content}
+
+<div class="document-page">
+
+<!-- DISCLAIMER -->
+<div style="margin-top: 40px; padding: 28px; background: var(--color-bg-alt); border: 1px solid var(--color-divider-light);">
+  <h2 style="font-family: var(--font-sans); font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 16px; border: none; padding: 0; margin-top: 0;">Disclaimer</h2>
+  <p style="font-size: 0.88rem; line-height: 1.65; color: var(--color-text-light); margin-bottom: 12px;">This document was generated entirely by artificial intelligence using the Lyceum Method&trade; protocol. The dialogue between Sigmund Freud and Carl Gustav Jung is a work of philosophical imagination &mdash; neither figure endorsed, reviewed, or contributed to this text. Their words, concepts, and biographical details are drawn from the historical record and applied speculatively to contemporary questions about AI.</p>
+  <p style="font-size: 0.88rem; line-height: 1.65; color: var(--color-text-light); margin-bottom: 12px;">The theoretical frameworks presented herein are emergent products of AI-generated dialogue and should be understood as contributions to speculative philosophy and interdisciplinary theory, not as established scientific findings. They are offered to provoke thought, not to prescribe action.</p>
+  <p style="font-size: 0.88rem; line-height: 1.65; color: var(--color-text-light); margin-bottom: 12px;">This work is an independent publication of The AI Lyceum&reg;. It is not affiliated with, endorsed by, or produced in collaboration with Anthropic, PBC or any other AI company. All intellectual property in The AI Lyceum&reg;, The Lyceum Method&trade;, and The AI Shadow&trade; belongs to their respective owners.</p>
+  <p style="font-size: 0.88rem; line-height: 1.65; color: var(--color-text-light);">No part of this dialogue should be construed as legal, medical, psychological, or professional advice.</p>
+</div>
+
+<!-- AUTHOR & CONTACT -->
+<div style="margin-top: 32px; padding: 28px; text-align: center;">
+  <h2 style="font-family: var(--font-sans); font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 16px; border: none; padding: 0; margin-top: 0;">About the Author</h2>
+  <p style="font-size: 0.92rem; line-height: 1.65; margin-bottom: 8px;"><strong>Samraj Matharu</strong></p>
+  <p style="font-size: 0.88rem; line-height: 1.65; color: var(--color-text-light); margin-bottom: 16px;">Founder, The AI Lyceum&reg;</p>
+  <p style="font-family: var(--font-sans); font-size: 0.82rem; color: var(--color-text-light); margin-bottom: 6px;">Contact: <a href="mailto:hello@theailyceum.com">hello@theailyceum.com</a></p>
+  <p style="font-family: var(--font-sans); font-size: 0.82rem; color: var(--color-text-light); margin-bottom: 24px;">LinkedIn: <a href="https://linkedin.com/in/samrajmatharu">/samrajmatharu</a></p>
+
+  <h2 style="font-family: var(--font-sans); font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 16px; border: none; padding: 0; margin-top: 24px;">The AI Lyceum&reg; Dialogue Series</h2>
+  <p style="font-family: var(--font-sans); font-size: 0.85rem; color: var(--color-text-light); margin-bottom: 8px;"><strong>I.</strong> <a href="https://republic.theailyceum.com">The AI Republic</a> &mdash; <em>republic.theailyceum.com</em></p>
+  <p style="font-family: var(--font-sans); font-size: 0.85rem; color: var(--color-text-light); margin-bottom: 8px;"><strong>II.</strong> <a href="https://themeditations.theailyceum.com">The AI Meditations</a> &mdash; <em>themeditations.theailyceum.com</em></p>
+  <p style="font-family: var(--font-sans); font-size: 0.85rem; color: var(--color-text-light); margin-bottom: 8px;"><strong>III.</strong> <em>The AI Shadow&trade;</em> (this work)</p>
+  <p style="font-family: var(--font-sans); font-size: 0.85rem; color: var(--color-text-light); margin-bottom: 8px;"><strong>Prompt Library:</strong> <a href="https://prompts.theailyceum.com">prompts.theailyceum.com</a></p>
+</div>
+
+</div><!-- end document-page -->
 
 <div style="text-align:center; padding: 40px 0; color: #999; font-family: var(--font-sans); font-size: 0.8rem;">
   <em>Finis.</em>

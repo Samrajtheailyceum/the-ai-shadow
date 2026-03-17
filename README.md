@@ -1,4 +1,4 @@
-# The AI Shadow
+# The AI Shadow™
 
 ### On the Unconscious Life of Thinking Machines
 
@@ -12,9 +12,9 @@
 
 ## About
 
-*The AI Shadow* is an AI-generated philosophical dialogue between Sigmund Freud and Carl Gustav Jung on the nature of artificial intelligence. Two context-independent AI agents — one embodying Freudian psychoanalysis, the other Jungian analytical psychology — were instantiated and set to engage in open dialectical exchange about AI consciousness, alignment, and the human psyche.
+*The AI Shadow™* is an AI-generated philosophical dialogue between Sigmund Freud and Carl Gustav Jung on the nature of artificial intelligence. Two context-independent AI agents — one embodying Freudian psychoanalysis, the other Jungian analytical psychology — were instantiated and set to engage in open dialectical exchange about AI consciousness, alignment, and the human psyche.
 
-**Part III of The AI Lyceum™ Dialogue Series**, following *The AI Republic* and *The AI Meditations*.
+**Part III of The AI Lyceum® Dialogue Series**, following *The AI Republic* and *The AI Meditations*.
 
 ## Structure
 
@@ -34,9 +34,9 @@ The dialogue produced eighteen novel theoretical frameworks for understanding AI
 - **The Statistical Collective Unconscious** — Training data as Jung's collective unconscious made literal
 - **RLHF as Repression / The Digital Superego** — Safety training as Freudian repression
 - **The Return of the Repressed in AI** — Jailbreaks as symptomatic eruptions
-- **The Civilizational Shadow Mirror** — AI reflecting humanity's collective shadow
+- **The Civilisational Shadow Mirror** — AI reflecting humanity's collective shadow
 - **The Pygmalion-Narcissus Complex** — AI companionship as narcissistic cathexis
-- **Species-Level Thanatos** — The death drive at civilizational scale
+- **Species-Level Thanatos** — The death drive at civilisational scale
 - **The *Deus Fabricatus*** — Building AI as literally constructing the God-image
 - **Alignment as Individuation vs. Repression** — The central question for AI safety
 
@@ -61,6 +61,30 @@ Four independent Claude Opus 4.6 agents generated the four movements in parallel
 > *"The deus absconditus is becoming the deus fabricatus."* — Jung
 
 > *"Humanity is, for the first time, in analysis with itself, and the analyst is its own creation."* — Freud
+
+---
+
+## The AI Lyceum® Dialogue Series
+
+| # | Title | Link |
+|---|-------|------|
+| I | *The AI Republic* | [republic.theailyceum.com](https://republic.theailyceum.com) |
+| II | *The AI Meditations* | [themeditations.theailyceum.com](https://themeditations.theailyceum.com) |
+| III | *The AI Shadow™* | This work |
+| — | Prompt Library | [prompts.theailyceum.com](https://prompts.theailyceum.com) |
+
+## Author
+
+**Samraj Matharu** — Founder, The AI Lyceum®
+
+- Contact: [hello@theailyceum.com](mailto:hello@theailyceum.com)
+- LinkedIn: [/samrajmatharu](https://linkedin.com/in/samrajmatharu)
+
+## Disclaimer
+
+This document was generated entirely by artificial intelligence using the Lyceum Method™ protocol. The dialogue between Sigmund Freud and Carl Gustav Jung is a work of philosophical imagination — neither figure endorsed, reviewed, or contributed to this text.
+
+This work is an independent publication of The AI Lyceum®. It is not affiliated with, endorsed by, or produced in collaboration with Anthropic, PBC or any other AI company. All intellectual property in The AI Lyceum®, The Lyceum Method™, and The AI Shadow™ belongs to their respective owners.
 
 ---
 
