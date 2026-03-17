@@ -760,10 +760,14 @@ if __name__ == '__main__':
     full_html = build_html(body)
 
     out_path = '/Users/samrajmatharu/Desktop/the-ai-shadow/THE_AI_SHADOW.html'
+    index_path = '/Users/samrajmatharu/Desktop/the-ai-shadow/index.html'
     with open(out_path, 'w') as f:
+        f.write(full_html)
+    with open(index_path, 'w') as f:
         f.write(full_html)
 
     print(f"Written to {out_path}")
+    print(f"Written to {index_path}")
     import os
     size = os.path.getsize(out_path)
     print(f"Size: {size:,} bytes ({size/1024:.0f} KB)")
