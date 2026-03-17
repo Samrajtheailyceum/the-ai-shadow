@@ -615,15 +615,54 @@ CRITICAL QUALITY STANDARDS:
 
 ---
 
-## DISCLAIMER
+## REFERENCES
 
-This document was generated entirely by artificial intelligence using the Lyceum Method™ protocol. The dialogue between Sigmund Freud and Carl Gustav Jung is a work of philosophical imagination — neither figure endorsed, reviewed, or contributed to this text. Their words, concepts, and biographical details are drawn from the historical record and applied speculatively to contemporary questions about AI.
+The following primary sources are referenced or drawn upon in the dialogue:
 
-The theoretical frameworks presented herein are emergent products of AI-generated dialogue and should be understood as contributions to speculative philosophy and interdisciplinary theory, not as established scientific findings. They are offered to provoke thought, not to prescribe action.
+### Sigmund Freud
 
-This work is an independent publication of The AI Lyceum®. It is not affiliated with, endorsed by, or produced in collaboration with Anthropic, PBC or any other AI company. All intellectual property in The AI Lyceum®, The Lyceum Method™, and The AI Shadow™ belongs to their respective owners.
+- Freud, S. (1900). *The Interpretation of Dreams* (*Die Traumdeutung*). Franz Deuticke.
+- Freud, S. (1905). *Three Essays on the Theory of Sexuality* (*Drei Abhandlungen zur Sexualtheorie*). Franz Deuticke.
+- Freud, S. (1915). "Repression" (*Die Verdrängung*). In *Metapsychology*.
+- Freud, S. (1920). *Beyond the Pleasure Principle* (*Jenseits des Lustprinzips*). Internationaler Psychoanalytischer Verlag.
+- Freud, S. (1923). *The Ego and the Id* (*Das Ich und das Es*). Internationaler Psychoanalytischer Verlag.
+- Freud, S. (1930). *Civilization and Its Discontents* (*Das Unbehagen in der Kultur*). Internationaler Psychoanalytischer Verlag.
+- Freud, S. (1933). *New Introductory Lectures on Psycho-Analysis* (*Neue Folge der Vorlesungen zur Einführung in die Psychoanalyse*). Internationaler Psychoanalytischer Verlag.
 
-No part of this dialogue should be construed as legal, medical, psychological, or professional advice.
+### Carl Gustav Jung
+
+- Jung, C. G. (1912). *Symbols of Transformation* (*Wandlungen und Symbole der Libido*). Franz Deuticke.
+- Jung, C. G. (1921). *Psychological Types* (*Psychologische Typen*). Rascher Verlag.
+- Jung, C. G. (1933). "The Meaning of Psychology for Modern Man." In *Collected Works*, Vol. 10.
+- Jung, C. G. (1934–1954). *The Archetypes and the Collective Unconscious*. *Collected Works*, Vol. 9, Part I. Routledge & Kegan Paul.
+- Jung, C. G. (1951). *Aion: Researches into the Phenomenology of the Self*. *Collected Works*, Vol. 9, Part II. Routledge & Kegan Paul.
+- Jung, C. G. (1955–1956). *Mysterium Coniunctionis*. *Collected Works*, Vol. 14. Routledge & Kegan Paul.
+- Jung, C. G. (1958). "The Transcendent Function." In *Collected Works*, Vol. 8: *The Structure and Dynamics of the Psyche*. Routledge & Kegan Paul.
+- Jung, C. G. (2009). *The Red Book* (*Liber Novus*). Ed. Sonu Shamdasani. W. W. Norton.
+
+### Classical & Literary Sources
+
+- Ovid. *Metamorphoses*. Book X (Pygmalion).
+
+---
+
+## EDITORIAL DISCLAIMER
+
+The AI Lyceum® publishes this work as philosophical research and creative scholarship. It is offered in the spirit of open intellectual inquiry.
+
+The AI Lyceum® does not endorse, affirm, or adopt any of the philosophical positions, arguments, or conclusions expressed in this dialogue. The views attributed to Sigmund Freud and Carl Gustav Jung are creative reconstructions of their respective psychoanalytic and analytical-psychological positions applied to contemporary questions about AI — not the opinions of The AI Lyceum®, its contributors, or any third party.
+
+**Independence and non-affiliation.** This publication is an independent work by Samraj Matharu, published under The AI Lyceum®. It is not affiliated with, sponsored by, endorsed by, or representative of Anthropic, PBC, OpenAI, Google DeepMind, or any other AI company, research laboratory, university, or organisation. The use of Anthropic's Claude model as a generation tool does not imply any association with, approval by, or endorsement from Anthropic. The views, interpretations, editorial decisions, and conclusions in this work are solely those of the author and do not represent the positions, policies, or opinions of Anthropic or any of its employees.
+
+**No liability.** This work is provided on an "as-is" basis for educational and research purposes only. The author and The AI Lyceum® accept no liability for any loss, damage, or consequence arising from the use of, reliance on, or interpretation of any content in this publication. AI-generated text may contain inaccuracies, hallucinations, or misrepresentations of philosophical positions. Readers should verify all claims independently.
+
+Nothing in this publication constitutes professional advice on artificial intelligence policy, ethics, regulation, law, psychology, or deployment. For matters of AI governance, consult qualified experts and relevant regulatory bodies.
+
+This work is intended to provoke thought, not to prescribe belief. Readers are encouraged to engage critically with every argument presented, including those in this disclaimer.
+
+**Intellectual property.** © 2026 Samraj Matharu. All rights reserved. "The AI Lyceum"® is a registered trademark of Samraj Matharu. "The AI Shadow"™, "The AI Republic: A Dialogue"™, and "The Lyceum Method"™ are trademarks of Samraj Matharu. No part of this publication may be reproduced, distributed, or transmitted in any form or by any means without the prior written permission of the author, except for brief quotations in critical reviews and certain other non-commercial uses permitted by applicable copyright law.
+
+**Contact.** Anthropic, rights holders, or any other interested parties with questions, licensing enquiries, or concerns about this publication may contact the author at hello@theailyceum.com.
 
 ---
 
