@@ -63,6 +63,14 @@ def md_to_html_body(md):
             i += 1
             continue
 
+        # H1 headers (# ) that aren't the title -> styled section dividers
+        if line.startswith('# ') and not line.startswith('## '):
+            title = line[2:].strip()
+            html_parts.append(f'<div class="section-divider"><span class="section-divider-inner"></span></div>')
+            html_parts.append(f'<h1 id="{slugify(title)}" style="text-align:center; border:none; font-size:1.6rem; letter-spacing:0.1em; margin:2em 0 1em;">{process_inline(title)}</h1>')
+            i += 1
+            continue
+
         # Horizontal rules -> section dividers or page breaks
         if line.strip() == '---':
             html_parts.append('<div class="ornamental-break">&#9674; &#9674; &#9674;</div>')
@@ -72,6 +80,15 @@ def md_to_html_body(md):
         # H2 headers -> section titles with page breaks
         if line.startswith('## '):
             title = line[3:].strip()
+
+            # Skip sections that are handled in the HTML template
+            if title in ('EDITORIAL DISCLAIMER', 'ABOUT THE AUTHOR'):
+                i += 1
+                # Skip all content until next ## heading or end
+                while i < len(lines) and not lines[i].startswith('## '):
+                    i += 1
+                continue
+
             page_num += 1
             # Close previous document-page if not first
             if page_num > 1:
