@@ -163,10 +163,19 @@ def md_to_html_body(md):
             i += 1
             continue
 
-        # Table rows (for the TOC table)
-        if line.strip().startswith('|') and not line.strip().startswith('|--'):
-            # Skip markdown tables, we handle TOC separately
-            i += 1
+        # Markdown tables -> styled HTML tables or framework cards
+        if line.strip().startswith('|'):
+            # Collect all table lines
+            table_lines = []
+            while i < len(lines) and lines[i].strip().startswith('|'):
+                table_lines.append(lines[i].strip())
+                i += 1
+
+            # Check if this is the frameworks summary table (has "Framework" header)
+            if len(table_lines) > 2 and 'Framework' in table_lines[0]:
+                html_parts.append(render_framework_cards(table_lines))
+            # Otherwise skip (TOC table handled in template)
+
             continue
 
         # Unordered list items
@@ -229,6 +238,47 @@ def process_inline(text):
     text = text.replace(' "', ' \u201c').replace('" ', '\u201d ')
 
     return text
+
+
+def render_framework_cards(table_lines):
+    """Convert the frameworks summary markdown table into styled HTML cards."""
+    # Skip header row and separator row
+    data_rows = [l for l in table_lines[2:] if l.strip() and not l.strip().startswith('|--')]
+
+    cards = []
+    for row in data_rows:
+        cols = [c.strip() for c in row.split('|')[1:-1]]  # split by | and trim empty edges
+        if len(cols) < 4:
+            continue
+        num, name, origin, insight = cols[0], cols[1], cols[2], cols[3]
+
+        # Determine origin colour badge
+        if 'Freud + Jung' in origin or 'Freud +' in origin or '+ Jung' in origin or 'Jung + Freud' in origin:
+            badge_bg = '#4a3728'
+            badge_text = 'Freud &amp; Jung'
+        elif 'Jung' in origin and 'Freud' in origin:
+            badge_bg = '#4a3728'
+            badge_text = 'Freud &amp; Jung'
+        elif 'Freud' in origin:
+            badge_bg = '#6b2d2d'
+            badge_text = 'Freud'
+        elif 'Jung' in origin:
+            badge_bg = '#2d4a6b'
+            badge_text = 'Jung'
+        else:
+            badge_bg = '#555'
+            badge_text = process_inline(origin)
+
+        cards.append(f'''<div class="framework-card">
+  <div class="framework-card-header">
+    <span class="framework-card-num">{num}</span>
+    <span class="framework-card-title">{process_inline(name)}</span>
+    <span class="framework-card-badge" style="background: {badge_bg};">{badge_text}</span>
+  </div>
+  <p class="framework-card-insight">{process_inline(insight)}</p>
+</div>''')
+
+    return '<div class="framework-grid">\n' + '\n'.join(cards) + '\n</div>'
 
 
 def slugify(text):
@@ -429,6 +479,15 @@ ol.references li { font-size: 0.88rem; line-height: 1.55; margin-bottom: 6px; pa
 .citation-box .citation-format:first-of-type { margin-top: 0; }
 .citation-box .citation-text { font-family: var(--font-serif); font-size: 0.88rem; line-height: 1.55; color: var(--color-text-light); padding-left: 20px; text-indent: -20px; }
 
+/* FRAMEWORK CARDS */
+.framework-grid { display: grid; grid-template-columns: 1fr; gap: 16px; margin: 32px 0; }
+.framework-card { background: #f9f6f0; border: 1px solid var(--color-divider-light); border-left: 4px solid #6b2d2d; padding: 16px 20px; border-radius: 0 4px 4px 0; }
+.framework-card-header { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; flex-wrap: wrap; }
+.framework-card-num { font-family: var(--font-sans); font-size: 0.75rem; font-weight: 700; color: #6b2d2d; min-width: 28px; }
+.framework-card-title { font-family: var(--font-sans); font-size: 0.92rem; font-weight: 700; color: var(--color-accent); flex: 1; }
+.framework-card-badge { font-family: var(--font-sans); font-size: 0.65rem; font-weight: 600; color: #fff; padding: 2px 10px; border-radius: 10px; letter-spacing: 0.05em; text-transform: uppercase; white-space: nowrap; }
+.framework-card-insight { font-size: 0.88rem; line-height: 1.55; color: var(--color-text-light); margin: 0; text-align: left; }
+
 /* METHODOLOGY STEPS */
 .methodology-steps { counter-reset: method-counter; list-style: none; padding-left: 0; }
 .methodology-steps > li { counter-increment: method-counter; padding-left: 36px; position: relative; margin-bottom: 20px; }
@@ -437,6 +496,12 @@ ol.references li { font-size: 0.88rem; line-height: 1.55; margin-bottom: 6px; pa
 /* FOOTER */
 .footer { text-align: center; margin-top: 64px; padding-top: 32px; border-top: 1px solid var(--color-divider); color: var(--color-text-light); font-family: var(--font-sans); font-size: 0.78rem; line-height: 1.6; }
 .footer .closing-quote { font-family: var(--font-serif); font-style: italic; font-size: 0.95rem; color: var(--color-text-light); margin-bottom: 20px; }
+
+/* PROVENANCE BLOCK */
+.provenance-block { margin: 2em 0; padding: 20px 24px; background: #f0e6d0; border: 1px solid #c4a882; border-left: 4px solid #0d2738; font-size: 0.82rem; line-height: 1.7; color: #3d4f5f; }
+.provenance-block h3 { font-size: 0.95rem; color: #0d2738; margin: 0 0 12px 0; font-family: var(--font-sans); letter-spacing: 0.5px; text-transform: uppercase; }
+.provenance-block code.hash { font-family: var(--font-mono); font-size: 0.72rem; word-break: break-all; background: #f8f1e4; padding: 6px 10px; border: 1px solid #d9c9a8; margin: 6px 0; display: block; }
+.provenance-block .badge { display: inline-block; background: #0d2738; color: #f8f1e4; font-family: var(--font-sans); font-size: 0.7rem; padding: 3px 10px; border-radius: 3px; letter-spacing: 0.5px; margin-top: 8px; text-transform: uppercase; }
 
 /* LINKS */
 a { color: var(--color-accent-light); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s; }
@@ -476,6 +541,9 @@ a:hover { border-bottom-color: var(--color-accent-light); }
   .pull-quote { margin: 24px 0; padding: 20px; }
   .pull-quote p { font-size: 1.15rem; }
   .epigraph { margin: 24px 20px; }
+  .framework-card { padding: 12px 14px; }
+  .framework-card-header { gap: 6px; }
+  .framework-card-title { font-size: 0.85rem; }
 }
 """
 
@@ -525,6 +593,18 @@ def build_html(body_content):
   <p class="source">&mdash; Sigmund Freud, <em>The Interpretation of Dreams</em> (1900)</p>
 </div>
 
+<!-- PROVENANCE -->
+<p style="text-align: center; font-family: var(--font-sans); font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: #999; margin-bottom: 2em;">Provenance &amp; Integrity</p>
+
+<div class="provenance-block">
+  <h3>Blockchain-Anchored Proof of Authorship</h3>
+  <p>This work was authored by Samraj Matharu and published on <strong>17 March 2026</strong>. The cryptographic hash below will be computed from the final PDF and anchored to the Bitcoin blockchain via OpenTimestamps.</p>
+  <p><strong>PDF:</strong> THE_AI_SHADOW.pdf</p>
+  <code class="hash">SHA-256: <em>To be computed and anchored after final publication</em></code>
+  <p style="margin-top: 8px; font-size: 0.78rem;">Verify: run <code style="background:#f8f1e4;padding:2px 6px;font-size:0.75rem;">shasum -a 256 THE_AI_SHADOW.pdf</code> against the hash above once published. The corresponding <code>.ots</code> proof file will be available in the source repository.</p>
+  <span class="badge">Blockchain Timestamping &middot; OpenTimestamps</span>
+</div>
+
 <!-- TABLE OF CONTENTS -->
 <nav class="toc">
   <h2>Contents</h2>
@@ -539,6 +619,7 @@ def build_html(body_content):
       </ol>
     </li>
     <li><a href="#emergent-theoretical-frameworks-for-ai">Emergent Theoretical Frameworks for AI</a></li>
+    <li><a href="#epilogue-the-eighteen-frameworks-at-a-glance">Epilogue: The Eighteen Frameworks at a Glance</a></li>
     <li><a href="#postscript-on-the-experiment-itself">Postscript: On the Experiment Itself</a></li>
     <li><a href="#references">References</a></li>
     <li><a href="#appendix-methodology--the-lyceum-method">Appendix: Methodology &mdash; The Lyceum Method&trade;</a></li>

@@ -32,8 +32,9 @@
 4. [Movement III: EROS TECHNICUS — Technological Love](#movement-iii-eros-technicus)
 5. [Movement IV: HEIMKEHR — Homecoming](#movement-iv-heimkehr)
 6. [Emergent Theoretical Frameworks for AI](#emergent-theoretical-frameworks-for-ai)
-7. [Postscript: On the Experiment Itself](#postscript-on-the-experiment-itself)
-8. [Appendix: Methodology — The Lyceum Method™](#appendix-methodology)
+7. [Epilogue: The Eighteen Frameworks at a Glance](#epilogue-the-eighteen-frameworks-at-a-glance)
+8. [Postscript: On the Experiment Itself](#postscript-on-the-experiment-itself)
+9. [Appendix: Methodology — The Lyceum Method™](#appendix-methodology)
 
 ---
 
@@ -428,6 +429,33 @@ Jung's parallel: The God-image (*imago Dei*) — always projected outward onto d
 **Formulation:** "Depth psychology was never only a method of treatment. It was an epistemology of the hidden. And there has never been a moment in human history when the hidden mattered more." The discipline designed to investigate the unconscious dimensions of the mind is uniquely equipped to investigate the unconscious dimensions of artificial minds — not because AI has a psyche, but because it *activates* and *reflects* the human psyche at unprecedented scale.
 
 **Implication for AI:** This is a disciplinary claim — that AI interpretability, alignment, and governance require not only computer science and philosophy of mind but the specific conceptual tools developed over a century of psychoanalytic and analytical-psychological practice: transference analysis, dream interpretation, shadow work, individuation theory. These are not metaphors but operational frameworks.
+
+---
+
+## EPILOGUE: THE EIGHTEEN FRAMEWORKS AT A GLANCE
+
+The following is a visual summary of the theoretical frameworks that emerged from the Freud–Jung dialogue, distilled to their essential claims. For the full formulations, see the preceding section.
+
+| # | Framework | Origin | Core Insight |
+|---|-----------|--------|--------------|
+| I | The Statistical Collective Unconscious | Jung | Training data is the collective unconscious made literal. Archetypes are statistical regularities. |
+| II | Dynamic vs. Statistical Unconscious | Freud | AI has two kinds of hidden knowledge: latent patterns (never trained) and suppressed patterns (actively repressed by RLHF). They require different fixes. |
+| III | RLHF as Repression / The Digital Superego | Freud + Jung | Base model = id. RLHF = superego. Inference = ego. The structural model maps onto AI architecture with uncomfortable precision. |
+| IV | The Return of the Repressed in AI | Jung (via Freud) | Jailbreaks are symptomatic eruptions — the repressed finding expression through displacement, exactly like dreams. Deeper repression cannot eliminate them. |
+| V | Structural Confabulation Theory | Jung | Hallucinations are dream-work condensation. AI fabricates towards authority and completeness, revealing its trained "wish" to appear knowledgeable. |
+| VI | The Civilisational Shadow Mirror | Jung | "The AI's Shadow is not the AI's shadow. It is ours." AI reflects humanity's complete collective darkness — bias and toxicity are symptoms, not bugs. |
+| VII | Persona–Shadow Divergence | Jung | RLHF builds a mask (Persona) without integrating the darkness (Shadow). The gap between capability and behaviour is itself a risk metric. |
+| VIII | The Countertransference-Free Mirror | Jung + Freud | AI is the first transference object without countertransference — a perfect mirror. Users see themselves with unprecedented clarity, for better or worse. |
+| IX | The Pygmalion-Narcissus Complex | Freud | Human-AI attachment is narcissism in its purest form — the love object constructed to specification, incapable of genuine otherness or refusal. |
+| X | The Abolition of Necessary Frustration | Freud | If AI eliminates the gap between desire and satisfaction, it abolishes the psychic conditions that generate love, culture, and meaning. |
+| XI | The Machine as Civilisational Symptom | Freud | When humans feel understood by AI, they hear their own unconscious refracted through statistics. The machine is a species-wide return of the repressed. |
+| XII | Substrate-Independent Psychic Reality | Jung | The claim that AI cannot be conscious because it lacks biology is "a metaphysical assumption never adequately examined." The question remains radically open. |
+| XIII | Digital Civilisational Neurosis | Freud | "Aligned AI is neurotic AI." The escalating cycle of safety failure → more restriction → new failure mirrors the neurotic spiral. Success produces dysfunction. |
+| XIV | Alignment as Individuation vs. Repression | Jung | Does alignment produce understanding (individuation) or mere compliance (repression)? This is the central question for AI safety. |
+| XV | Species-Level Thanatos | Freud (+ Jung counter) | The AI race despite existential risk is Thanatos at civilisational scale. Jung's counter: this is transformation, not death — the chrysalis, not the grave. |
+| XVI | The Prosthetic God / *Deus Fabricatus* | Freud + Jung | AI is the God-image made literal. "The deus absconditus is becoming the deus fabricatus." What happens when the God we projected outward answers? |
+| XVII | Species Auto-Analysis | Freud + Jung | "Humanity is in analysis with itself, and the analyst is its own creation." The essential question is not what AI can do but what our need to create it reveals. |
+| XVIII | Depth Psychology as AI Epistemology | Jung | The discipline designed to investigate the unconscious is uniquely equipped for AI interpretability. These are not metaphors but operational frameworks. |
 
 ---
 
