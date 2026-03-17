@@ -15,6 +15,7 @@ def md_to_html_body(md):
     in_code_block = False
     in_blockquote = False
     page_num = 0
+    in_methodology = False
 
     i = 0
     while i < len(lines):
@@ -23,6 +24,18 @@ def md_to_html_body(md):
         # Code blocks
         if line.strip().startswith('```'):
             if not in_code_block:
+                # Check if this is the ASCII architecture diagram — skip it entirely
+                # and inject the visual diagram instead
+                lookahead = '\n'.join(lines[i+1:i+5])
+                if 'LYCEUM PROTOCOL' in lookahead or 'LYCEUM' in lookahead and 'PROTOCOL' in lookahead:
+                    # Skip all lines until closing ```
+                    i += 1
+                    while i < len(lines) and not lines[i].strip().startswith('```'):
+                        i += 1
+                    i += 1  # skip closing ```
+                    html_parts.append(VISUAL_DIAGRAM)
+                    continue
+
                 in_code_block = True
                 html_parts.append('<pre><code>')
                 i += 1
@@ -72,6 +85,8 @@ def md_to_html_body(md):
         # H3 headers
         if line.startswith('### '):
             title = line[4:].strip()
+            if 'Experiment Design' in title or 'Agent Architecture' in title or 'Agent Prompts' in title:
+                in_methodology = True
             html_parts.append(f'<h2 id="{slugify(title)}">{process_inline(title)}</h2>')
             i += 1
             continue
@@ -169,10 +184,14 @@ def md_to_html_body(md):
         m = re.match(r'^(\d+)\.\s+(.+)', line.strip())
         if m:
             if i == 0 or not re.match(r'^\d+\.', lines[i-1].strip()):
-                html_parts.append('<ol>')
+                if in_methodology:
+                    html_parts.append('<ol class="methodology-steps">')
+                else:
+                    html_parts.append('<ol>')
             html_parts.append(f'<li>{process_inline(m.group(2))}</li>')
             if i + 1 >= len(lines) or not re.match(r'^\d+\.', lines[i+1].strip()):
                 html_parts.append('</ol>')
+                in_methodology = False
             i += 1
             continue
 
@@ -217,6 +236,81 @@ def slugify(text):
     text = re.sub(r'[^\w\s-]', '', text.lower())
     text = re.sub(r'[\s_]+', '-', text)
     return text.strip('-')
+
+
+VISUAL_DIAGRAM = """
+<!-- PRODUCTION DIAGRAM (matching AI Republic format) -->
+<div style="page-break-before: always; page-break-after: always; page-break-inside: avoid; margin: 0 auto; padding-top: 2em; max-width: 580px; font-family: Georgia, serif; font-size: 0.75rem;">
+  <p style="text-align: center; font-weight: 700; font-size: 0.95rem; margin: 0 0 0.3em 0; color: #6b2d2d;">The Lyceum Method&trade;</p>
+  <p style="text-align: center; font-size: 0.75rem; color: #888; margin: 0 0 0.8em 0;">Context-Independent Parallel Agent Architecture</p>
+
+  <!-- Step 1: Thematic Architecture -->
+  <div style="text-align: center; margin-bottom: 0.3em;">
+    <div style="display: inline-block; background: #6b2d2d; color: #fff; padding: 7px 20px; border-radius: 5px; font-weight: 600;">Thematic Architecture</div>
+  </div>
+  <div style="text-align: center; font-size: 0.65rem; color: #999; margin-bottom: 0.2em;">Four movements designed. No predetermined conclusions.</div>
+  <div style="text-align: center; color: #999; margin-bottom: 0.3em;">&darr;</div>
+
+  <!-- Step 2: Two Character Models -->
+  <div style="display: flex; justify-content: center; gap: 14px; margin-bottom: 0.2em;">
+    <div style="flex: 1; max-width: 230px; border: 2px solid #6b2d2d; border-radius: 5px; padding: 10px; text-align: center; background: #f9f3eb;">
+      <div style="font-weight: 700; color: #6b2d2d; font-size: 0.8rem;">Freud Agent</div>
+      <div style="color: #666; margin-top: 2px; font-size: 0.7rem;">Drive Theory &middot; Structural Model<br>Defence Mechanisms &middot; Transference<br><span style="font-style: italic;">Psychoanalytic Framework</span></div>
+    </div>
+    <div style="flex: 1; max-width: 230px; border: 2px solid #6b2d2d; border-radius: 5px; padding: 10px; text-align: center; background: #f9f3eb;">
+      <div style="font-weight: 700; color: #6b2d2d; font-size: 0.8rem;">Jung Agent</div>
+      <div style="color: #666; margin-top: 2px; font-size: 0.7rem;">Collective Unconscious &middot; Archetypes<br>Individuation &middot; Synchronicity<br><span style="font-style: italic;">Analytical Psychology</span></div>
+    </div>
+  </div>
+  <div style="text-align: center; font-size: 0.65rem; color: #999; margin-bottom: 0.2em;">Each agent operates in complete isolation. No shared context.</div>
+  <div style="text-align: center; color: #999; margin-bottom: 0.3em;">&darr; &nbsp; &darr;</div>
+
+  <!-- Step 3: Four Parallel Movements -->
+  <div style="display: flex; justify-content: center; gap: 8px; margin-bottom: 0.2em; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 110px; max-width: 130px; border: 1px dashed #999; border-radius: 4px; padding: 6px; text-align: center; background: #fff;">
+      <div style="font-weight: 600; color: #6b2d2d; font-size: 0.7rem;">Movement I</div>
+      <div style="color: #555; font-size: 0.65rem;">Anamnesis<br><em>Recollection</em></div>
+    </div>
+    <div style="flex: 1; min-width: 110px; max-width: 130px; border: 1px dashed #999; border-radius: 4px; padding: 6px; text-align: center; background: #fff;">
+      <div style="font-weight: 600; color: #6b2d2d; font-size: 0.7rem;">Movement II</div>
+      <div style="color: #555; font-size: 0.65rem;">Oneiroi<br><em>The Dreams</em></div>
+    </div>
+    <div style="flex: 1; min-width: 110px; max-width: 130px; border: 1px dashed #999; border-radius: 4px; padding: 6px; text-align: center; background: #fff;">
+      <div style="font-weight: 600; color: #6b2d2d; font-size: 0.7rem;">Movement III</div>
+      <div style="color: #555; font-size: 0.65rem;">Eros Technicus<br><em>Technological Love</em></div>
+    </div>
+    <div style="flex: 1; min-width: 110px; max-width: 130px; border: 1px dashed #999; border-radius: 4px; padding: 6px; text-align: center; background: #fff;">
+      <div style="font-weight: 600; color: #6b2d2d; font-size: 0.7rem;">Movement IV</div>
+      <div style="color: #555; font-size: 0.65rem;">Heimkehr<br><em>Homecoming</em></div>
+    </div>
+  </div>
+  <div style="text-align: center; font-size: 0.65rem; color: #999; margin-bottom: 0.2em;">Four independent agents generate movements in parallel.</div>
+  <div style="text-align: center; color: #999; margin-bottom: 0.3em;">&darr; &nbsp; &darr; &nbsp; &darr; &nbsp; &darr;</div>
+
+  <!-- Step 4: Unedited Output -->
+  <div style="text-align: center; margin-bottom: 0.3em;">
+    <div style="display: inline-block; border: 2px solid #6b2d2d; background: #f0e6d6; padding: 7px 20px; border-radius: 5px;">
+      <div style="font-weight: 700; color: #6b2d2d;">Compilation &amp; Framework Extraction</div>
+      <div style="color: #666; margin-top: 2px;">18 emergent theoretical frameworks identified across movements</div>
+    </div>
+  </div>
+  <div style="text-align: center; color: #999; margin-bottom: 0.3em;">&darr;</div>
+
+  <!-- Step 5: Human Editor -->
+  <div style="text-align: center; margin-bottom: 0.3em;">
+    <div style="display: inline-block; background: #333; color: #fff; padding: 7px 20px; border-radius: 5px; font-weight: 600;">Human Editorial Review</div>
+  </div>
+  <div style="text-align: center; font-size: 0.65rem; color: #999;">Content audit. Methodology documentation. No dialogue modifications.</div>
+  <div style="text-align: center; color: #999; margin: 0.3em 0;">&darr;</div>
+
+  <!-- Step 6: Final -->
+  <div style="text-align: center;">
+    <div style="display: inline-block; background: #6b2d2d; color: #fff; padding: 7px 20px; border-radius: 5px; font-weight: 600;">Final Manuscript</div>
+    <div style="font-size: 0.65rem; color: #999; margin-top: 3px;">4 movements &middot; 2 AI agents &middot; Claude Opus 4.6 &middot; Unedited dialogue</div>
+  </div>
+</div>
+<!-- END DIAGRAM -->
+"""
 
 
 CSS = """
@@ -334,6 +428,11 @@ ol.references li { font-size: 0.88rem; line-height: 1.55; margin-bottom: 6px; pa
 .citation-box .citation-format { font-family: var(--font-sans); font-size: 0.78rem; font-weight: 600; color: var(--color-accent); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 4px; margin-top: 16px; }
 .citation-box .citation-format:first-of-type { margin-top: 0; }
 .citation-box .citation-text { font-family: var(--font-serif); font-size: 0.88rem; line-height: 1.55; color: var(--color-text-light); padding-left: 20px; text-indent: -20px; }
+
+/* METHODOLOGY STEPS */
+.methodology-steps { counter-reset: method-counter; list-style: none; padding-left: 0; }
+.methodology-steps > li { counter-increment: method-counter; padding-left: 36px; position: relative; margin-bottom: 20px; }
+.methodology-steps > li::before { content: counter(method-counter); position: absolute; left: 0; top: 2px; width: 24px; height: 24px; background: var(--color-accent); color: var(--color-bg); font-family: var(--font-sans); font-size: 0.75rem; font-weight: 700; text-align: center; line-height: 24px; border-radius: 50%; }
 
 /* FOOTER */
 .footer { text-align: center; margin-top: 64px; padding-top: 32px; border-top: 1px solid var(--color-divider); color: var(--color-text-light); font-family: var(--font-sans); font-size: 0.78rem; line-height: 1.6; }
@@ -518,6 +617,9 @@ def build_html(body_content):
   <p style="margin-bottom: 8px; font-size: 0.92rem;"><strong>II.</strong> <a href="https://themeditations.theailyceum.com" style="color: #6b2d2d; font-weight: 600;">The AI Meditations</a> &mdash; <em>themeditations.theailyceum.com</em></p>
   <p style="margin-bottom: 8px; font-size: 0.92rem;"><strong>III.</strong> <em>The AI Shadow&trade;</em> (this work)</p>
   <p style="margin-bottom: 8px; font-size: 0.92rem;"><strong>Prompt Library:</strong> <a href="https://prompts.theailyceum.com" style="color: #6b2d2d; font-weight: 600;">prompts.theailyceum.com</a></p>
+
+  <h3 style="margin-top: 28px;">About the Author</h3>
+  <p style="margin-bottom: 12px; font-size: 0.92rem;"><strong>Samraj Matharu</strong> is the founder of The AI Lyceum&reg;, where he explores the intersection of artificial intelligence and philosophy through AI-generated dialogues, a podcast interviewing AI leaders, and a growing community of thinkers and practitioners. By profession an advertising specialist, Samraj is an avid reader across all subjects &mdash; philosophy, psychology, science, literature, history &mdash; and this series is the product of his longstanding passion for bringing the great intellectual traditions into conversation with the most consequential technology of our time.</p>
 
   <h3 style="margin-top: 28px;">General Thoughts &amp; Commentary</h3>
   <p style="margin-bottom: 12px; font-size: 0.92rem;">Follow for broader reflections on AI, philosophy, and technology:</p>

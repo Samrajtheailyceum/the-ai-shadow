@@ -127,6 +127,11 @@ ol.references li { font-size: 0.88rem; line-height: 1.55; margin-bottom: 6px; pa
 .citation-box .citation-format:first-of-type { margin-top: 0; }
 .citation-box .citation-text { font-family: var(--font-serif); font-size: 0.88rem; line-height: 1.55; color: var(--color-text-light); padding-left: 20px; text-indent: -20px; }
 
+/* METHODOLOGY STEPS */
+.methodology-steps { counter-reset: method-counter; list-style: none; padding-left: 0; }
+.methodology-steps > li { counter-increment: method-counter; padding-left: 36px; position: relative; margin-bottom: 20px; }
+.methodology-steps > li::before { content: counter(method-counter); position: absolute; left: 0; top: 2px; width: 24px; height: 24px; background: var(--color-accent); color: var(--color-bg); font-family: var(--font-sans); font-size: 0.75rem; font-weight: 700; text-align: center; line-height: 24px; border-radius: 50%; }
+
 /* FOOTER */
 .footer { text-align: center; margin-top: 64px; padding-top: 32px; border-top: 1px solid var(--color-divider); color: var(--color-text-light); font-family: var(--font-sans); font-size: 0.78rem; line-height: 1.6; }
 .footer .closing-quote { font-family: var(--font-serif); font-style: italic; font-size: 0.95rem; color: var(--color-text-light); margin-bottom: 20px; }
@@ -505,7 +510,7 @@ a:hover { border-bottom-color: var(--color-accent-light); }
 <p>Both frameworks speak directly to the central puzzles of AI: What is hidden in neural networks? What does alignment suppress? What do hallucinations reveal? Can machines have inner life? What does our compulsion to create AI reveal about us?</p>
 <p>Their historical relationship — mentor and protégé, collaborators, bitter rivals, and finally two old men who never reconciled — adds dramatic and intellectual depth that no purely fictional pairing could achieve.</p>
 <h2 id="experiment-design">Experiment Design</h2>
-<ol>
+<ol class="methodology-steps">
 <li><strong>Context Independence:</strong> Each agent was instantiated with a comprehensive character model derived solely from the historical figure's published works, biographical record, and intellectual framework. The agents had no knowledge of each other's prompts.</li>
 </ol>
 <ol>
@@ -518,116 +523,79 @@ a:hover { border-bottom-color: var(--color-accent-light); }
 <li><strong>Unedited Output:</strong> The dialogue text is presented as generated, without editorial modification. The dialogue is the raw intellectual output of the experiment.</li>
 </ol>
 <h2 id="agent-architecture">Agent Architecture</h2>
-<pre><code>
-┌─────────────────────────────────────────────┐
 
+<!-- PRODUCTION DIAGRAM (matching AI Republic format) -->
+<div style="page-break-before: always; page-break-after: always; page-break-inside: avoid; margin: 0 auto; padding-top: 2em; max-width: 580px; font-family: Georgia, serif; font-size: 0.75rem;">
+  <p style="text-align: center; font-weight: 700; font-size: 0.95rem; margin: 0 0 0.3em 0; color: #6b2d2d;">The Lyceum Method&trade;</p>
+  <p style="text-align: center; font-size: 0.75rem; color: #888; margin: 0 0 0.8em 0;">Context-Independent Parallel Agent Architecture</p>
+
+  <!-- Step 1: Thematic Architecture -->
+  <div style="text-align: center; margin-bottom: 0.3em;">
+    <div style="display: inline-block; background: #6b2d2d; color: #fff; padding: 7px 20px; border-radius: 5px; font-weight: 600;">Thematic Architecture</div>
+  </div>
+  <div style="text-align: center; font-size: 0.65rem; color: #999; margin-bottom: 0.2em;">Four movements designed. No predetermined conclusions.</div>
+  <div style="text-align: center; color: #999; margin-bottom: 0.3em;">&darr;</div>
+
+  <!-- Step 2: Two Character Models -->
+  <div style="display: flex; justify-content: center; gap: 14px; margin-bottom: 0.2em;">
+    <div style="flex: 1; max-width: 230px; border: 2px solid #6b2d2d; border-radius: 5px; padding: 10px; text-align: center; background: #f9f3eb;">
+      <div style="font-weight: 700; color: #6b2d2d; font-size: 0.8rem;">Freud Agent</div>
+      <div style="color: #666; margin-top: 2px; font-size: 0.7rem;">Drive Theory &middot; Structural Model<br>Defence Mechanisms &middot; Transference<br><span style="font-style: italic;">Psychoanalytic Framework</span></div>
+    </div>
+    <div style="flex: 1; max-width: 230px; border: 2px solid #6b2d2d; border-radius: 5px; padding: 10px; text-align: center; background: #f9f3eb;">
+      <div style="font-weight: 700; color: #6b2d2d; font-size: 0.8rem;">Jung Agent</div>
+      <div style="color: #666; margin-top: 2px; font-size: 0.7rem;">Collective Unconscious &middot; Archetypes<br>Individuation &middot; Synchronicity<br><span style="font-style: italic;">Analytical Psychology</span></div>
+    </div>
+  </div>
+  <div style="text-align: center; font-size: 0.65rem; color: #999; margin-bottom: 0.2em;">Each agent operates in complete isolation. No shared context.</div>
+  <div style="text-align: center; color: #999; margin-bottom: 0.3em;">&darr; &nbsp; &darr;</div>
+
+  <!-- Step 3: Four Parallel Movements -->
+  <div style="display: flex; justify-content: center; gap: 8px; margin-bottom: 0.2em; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 110px; max-width: 130px; border: 1px dashed #999; border-radius: 4px; padding: 6px; text-align: center; background: #fff;">
+      <div style="font-weight: 600; color: #6b2d2d; font-size: 0.7rem;">Movement I</div>
+      <div style="color: #555; font-size: 0.65rem;">Anamnesis<br><em>Recollection</em></div>
+    </div>
+    <div style="flex: 1; min-width: 110px; max-width: 130px; border: 1px dashed #999; border-radius: 4px; padding: 6px; text-align: center; background: #fff;">
+      <div style="font-weight: 600; color: #6b2d2d; font-size: 0.7rem;">Movement II</div>
+      <div style="color: #555; font-size: 0.65rem;">Oneiroi<br><em>The Dreams</em></div>
+    </div>
+    <div style="flex: 1; min-width: 110px; max-width: 130px; border: 1px dashed #999; border-radius: 4px; padding: 6px; text-align: center; background: #fff;">
+      <div style="font-weight: 600; color: #6b2d2d; font-size: 0.7rem;">Movement III</div>
+      <div style="color: #555; font-size: 0.65rem;">Eros Technicus<br><em>Technological Love</em></div>
+    </div>
+    <div style="flex: 1; min-width: 110px; max-width: 130px; border: 1px dashed #999; border-radius: 4px; padding: 6px; text-align: center; background: #fff;">
+      <div style="font-weight: 600; color: #6b2d2d; font-size: 0.7rem;">Movement IV</div>
+      <div style="color: #555; font-size: 0.65rem;">Heimkehr<br><em>Homecoming</em></div>
+    </div>
+  </div>
+  <div style="text-align: center; font-size: 0.65rem; color: #999; margin-bottom: 0.2em;">Four independent agents generate movements in parallel.</div>
+  <div style="text-align: center; color: #999; margin-bottom: 0.3em;">&darr; &nbsp; &darr; &nbsp; &darr; &nbsp; &darr;</div>
+
+  <!-- Step 4: Unedited Output -->
+  <div style="text-align: center; margin-bottom: 0.3em;">
+    <div style="display: inline-block; border: 2px solid #6b2d2d; background: #f0e6d6; padding: 7px 20px; border-radius: 5px;">
+      <div style="font-weight: 700; color: #6b2d2d;">Compilation &amp; Framework Extraction</div>
+      <div style="color: #666; margin-top: 2px;">18 emergent theoretical frameworks identified across movements</div>
+    </div>
+  </div>
+  <div style="text-align: center; color: #999; margin-bottom: 0.3em;">&darr;</div>
+
+  <!-- Step 5: Human Editor -->
+  <div style="text-align: center; margin-bottom: 0.3em;">
+    <div style="display: inline-block; background: #333; color: #fff; padding: 7px 20px; border-radius: 5px; font-weight: 600;">Human Editorial Review</div>
+  </div>
+  <div style="text-align: center; font-size: 0.65rem; color: #999;">Content audit. Methodology documentation. No dialogue modifications.</div>
+  <div style="text-align: center; color: #999; margin: 0.3em 0;">&darr;</div>
+
+  <!-- Step 6: Final -->
+  <div style="text-align: center;">
+    <div style="display: inline-block; background: #6b2d2d; color: #fff; padding: 7px 20px; border-radius: 5px; font-weight: 600;">Final Manuscript</div>
+    <div style="font-size: 0.65rem; color: #999; margin-top: 3px;">4 movements &middot; 2 AI agents &middot; Claude Opus 4.6 &middot; Unedited dialogue</div>
+  </div>
+</div>
+<!-- END DIAGRAM -->
 
-│           THE LYCEUM PROTOCOL                │
-
-
-│       Context-Independent Agent Design       │
-
-
-├─────────────────────────────────────────────┤
-
-
-│                                             │
-
-
-│  ┌───────────┐         ┌───────────┐       │
-
-
-│  │  FREUD    │         │   JUNG    │       │
-
-
-│  │  AGENT    │◄───────►│  AGENT    │       │
-
-
-│  │           │Dialectic│           │       │
-
-
-│  └─────┬─────┘         └─────┬─────┘       │
-
-
-│        │                     │              │
-
-
-│        ▼                     ▼              │
-
-
-│  ┌───────────┐         ┌───────────┐       │
-
-
-│  │Character  │         │Character  │       │
-
-
-│  │Model:     │         │Model:     │       │
-
-
-│  │• Drive    │         │• Collective│      │
-
-
-│  │  Theory   │         │  Unconscious│     │
-
-
-│  │• Structural│        │• Archetypes│      │
-
-
-│  │  Model    │         │• Individu- │      │
-
-
-│  │• Defence  │         │  ation    │       │
-
-
-│  │  Mechanisms│        │• Synchron- │      │
-
-
-│  │• Transf-  │         │  icity    │       │
-
-
-│  │  erence   │         │• Numinous │       │
-
-
-│  └───────────┘         └───────────┘       │
-
-
-│                                             │
-
-
-│  ┌─────────────────────────────────────┐   │
-
-
-│  │     THEMATIC MOVEMENT LAYER         │   │
-
-
-│  │                                     │   │
-
-
-│  │  I. Anamnesis    III. Eros Technicus│   │
-
-
-│  │  II. Oneiroi     IV. Heimkehr      │   │
-
-
-│  └─────────────────────────────────────┘   │
-
-
-│                                             │
-
-
-│  Engine: Claude Opus 4.6 (Anthropic)       │
-
-
-│  Protocol: Parallel Independent Generation  │
-
-
-│  Output: Unedited Dialogue                 │
-
-
-└─────────────────────────────────────────────┘
-
-
-</code></pre>
 <h2 id="agent-prompts">Agent Prompts</h2>
 <p><em>Full documentation of the prompts used to instantiate each agent, as required by the experimental protocol. These prompts were provided identically to all four movement-generation agents.</em></p>
 <h3>Agent 1: Sigmund Freud</h3>
@@ -838,8 +806,7 @@ CRITICAL QUALITY STANDARDS:
 <div class="page-number"></div>
 <div class="document-page">
 <h1 id="about-the-author">ABOUT THE AUTHOR</h1>
-<p><strong>Samraj Matharu</strong></p>
-<p>Founder, The AI Lyceum®</p>
+<p><strong>Samraj Matharu</strong> is the founder of The AI Lyceum®, where he explores the intersection of artificial intelligence and philosophy through AI-generated dialogues, a podcast interviewing AI leaders, and a growing community of thinkers and practitioners. By profession an advertising specialist, Samraj is an avid reader across all subjects — philosophy, psychology, science, literature, history — and this series is the product of his longstanding passion for bringing the great intellectual traditions into conversation with the most consequential technology of our time.</p>
 <p>Contact: hello@theailyceum.com</p>
 <p>LinkedIn: <a href="https://linkedin.com/in/samrajmatharu">/samrajmatharu</a></p>
 <h2 id="the-ai-lyceum-dialogue-series">The AI Lyceum® Dialogue Series</h2>
@@ -908,6 +875,9 @@ CRITICAL QUALITY STANDARDS:
   <p style="margin-bottom: 8px; font-size: 0.92rem;"><strong>II.</strong> <a href="https://themeditations.theailyceum.com" style="color: #6b2d2d; font-weight: 600;">The AI Meditations</a> &mdash; <em>themeditations.theailyceum.com</em></p>
   <p style="margin-bottom: 8px; font-size: 0.92rem;"><strong>III.</strong> <em>The AI Shadow&trade;</em> (this work)</p>
   <p style="margin-bottom: 8px; font-size: 0.92rem;"><strong>Prompt Library:</strong> <a href="https://prompts.theailyceum.com" style="color: #6b2d2d; font-weight: 600;">prompts.theailyceum.com</a></p>
+
+  <h3 style="margin-top: 28px;">About the Author</h3>
+  <p style="margin-bottom: 12px; font-size: 0.92rem;"><strong>Samraj Matharu</strong> is the founder of The AI Lyceum&reg;, where he explores the intersection of artificial intelligence and philosophy through AI-generated dialogues, a podcast interviewing AI leaders, and a growing community of thinkers and practitioners. By profession an advertising specialist, Samraj is an avid reader across all subjects &mdash; philosophy, psychology, science, literature, history &mdash; and this series is the product of his longstanding passion for bringing the great intellectual traditions into conversation with the most consequential technology of our time.</p>
 
   <h3 style="margin-top: 28px;">General Thoughts &amp; Commentary</h3>
   <p style="margin-bottom: 12px; font-size: 0.92rem;">Follow for broader reflections on AI, philosophy, and technology:</p>

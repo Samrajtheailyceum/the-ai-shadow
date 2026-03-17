@@ -668,8 +668,7 @@ This work is intended to provoke thought, not to prescribe belief. Readers are e
 
 ## ABOUT THE AUTHOR
 
-**Samraj Matharu**
-Founder, The AI Lyceum®
+**Samraj Matharu** is the founder of The AI Lyceum®, where he explores the intersection of artificial intelligence and philosophy through AI-generated dialogues, a podcast interviewing AI leaders, and a growing community of thinkers and practitioners. By profession an advertising specialist, Samraj is an avid reader across all subjects — philosophy, psychology, science, literature, history — and this series is the product of his longstanding passion for bringing the great intellectual traditions into conversation with the most consequential technology of our time.
 
 Contact: hello@theailyceum.com
 LinkedIn: [/samrajmatharu](https://linkedin.com/in/samrajmatharu)
