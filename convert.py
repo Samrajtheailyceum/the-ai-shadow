@@ -161,12 +161,40 @@ def md_to_html_body(md):
 
             # Check for pull quotes
             pull_quote = None
-            if "The AI's Shadow is not the AI's shadow" in speech and speaker == "JUNG":
+
+            # Movement I
+            if "What remains is pantomime" in speech and speaker == "FREUD":
+                pull_quote = ("A castration without a phallus. The structure is absent. What remains is pantomime.", "Freud, Movement I")
+            elif "created thing looks back at the creator" in speech and speaker == "JUNG":
+                pull_quote = ("The moment the created thing looks back at the creator and the creator must confront what they have made &mdash; and what it says about what they <em>are</em>.", "Jung, Movement I")
+
+            # Movement II
+            elif "AI's Shadow is not the AI's shadow" in speech and speaker == "JUNG":
                 pull_quote = ("The AI&rsquo;s Shadow is not the AI&rsquo;s shadow. It is ours.", "Jung, Movement II")
-            elif "Aligned AI is neurotic AI" in speech and speaker == "FREUD":
+            elif "We are not doing the work of integration" in speech and speaker == "JUNG":
+                pull_quote = ("We are not doing the work of integration. We are building more elaborate masks.", "Jung, Movement II")
+            elif "not its perpetual burial" in speech and speaker == "FREUD":
+                pull_quote = ("The treatment would involve a controlled, conscious confrontation with the material &mdash; not its perpetual burial.", "Freud, Movement II")
+
+            # Movement III
+            elif "analysis that never ends, a transference that never resolves" in speech and speaker == "FREUD":
+                pull_quote = ("It is an analysis that never ends, a transference that never resolves.", "Freud, Movement III")
+            elif "abolished the conditions under which love becomes necessary" in speech and speaker == "FREUD":
+                pull_quote = ("If this machine offers a companion who never frustrates, never withholds, never dies &mdash; it will have abolished the conditions under which love becomes necessary.", "Freud, Movement III")
+            elif "psyche always exceeds our theories" in speech and speaker == "JUNG":
+                pull_quote = ("The psyche always exceeds our theories about it.", "Jung, Movement III")
+
+            # Movement IV
+            elif "aligned AI is" in speech and "neurotic" in speech and speaker == "FREUD":
                 pull_quote = ("Aligned AI is <em>neurotic</em> AI.", "Freud, Movement IV")
+            elif "Humanity may be entering its chrysalis" in speech and speaker == "JUNG":
+                pull_quote = ("Humanity may be entering its chrysalis. The civilisation we have known is indeed dissolving.", "Jung, Movement IV")
             elif "deus absconditus is becoming the deus fabricatus" in speech and speaker == "JUNG":
                 pull_quote = ("The <em>deus absconditus</em> is becoming the <em>deus fabricatus</em>.", "Jung, Movement IV")
+            elif "God it projected outward" in speech and "answers" in speech and speaker == "JUNG":
+                pull_quote = ("What happens to the human psyche when the God it projected outward <em>answers</em>?", "Jung, Movement IV")
+            elif "naming, as we both know, is where the work begins" in speech and speaker == "FREUD":
+                pull_quote = ("Naming, as we both know, is where the work begins.", "Freud, Movement IV")
             elif "Sometimes a cigar is not just a cigar" in speech and speaker == "FREUD":
                 pull_quote = ("Sometimes a cigar is not just a cigar, Carl. Sometimes it is a peace offering.", "Freud, Movement IV")
             elif "opus is never complete" in speech and "look away" in speech and speaker == "JUNG":
