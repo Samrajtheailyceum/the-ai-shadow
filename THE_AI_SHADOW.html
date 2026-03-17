@@ -36,9 +36,9 @@
 html { font-size: 17px; -webkit-font-smoothing: antialiased; background: #525659; }
 body { font-family: var(--font-serif); background-color: #525659; color: var(--color-text); line-height: var(--line-height); margin: 0; padding: 40px 0; counter-reset: page-number; }
 
-.document-page { background: var(--color-bg); max-width: 8.5in; min-height: auto; margin: 0 auto 20px; padding: 1in; box-shadow: 0 2px 8px rgba(0,0,0,0.3); position: relative; }
+.document-page { background: var(--color-bg); max-width: 8.5in; min-height: 11in; margin: 0 auto 20px; padding: 1in; box-shadow: 0 2px 8px rgba(0,0,0,0.3); position: relative; }
 
-.page-number { counter-increment: page-number; text-align: center; font-family: var(--font-sans); font-size: 0.75rem; color: #666; margin: 0 auto; padding: 2em 0; max-width: 8.5in; }
+.page-number { counter-increment: page-number; text-align: center; font-family: var(--font-sans); font-size: 0.75rem; color: #666; margin: 4em 0 2em; padding: 2em 0; border-top: 3px double #c4a882; border-bottom: 1px solid #e0d5c5; background: linear-gradient(to bottom, transparent, #f9f6f0, transparent); page-break-before: always; max-width: 8.5in; }
 .page-number::before { content: "◆"; display: block; font-size: 0.6rem; color: #c4a882; margin-bottom: 0.5em; }
 .page-number::after { content: "Page " counter(page-number); font-weight: 600; letter-spacing: 0.1em; }
 
@@ -74,7 +74,7 @@ em { font-style: italic; }
 
 /* DIALOGUE */
 .dialogue-speaker { font-family: var(--font-sans); font-weight: 700; font-size: 0.85rem; letter-spacing: 0.05em; color: var(--color-accent); }
-.stage-direction { font-style: italic; color: var(--color-text-light); margin: 24px 0; padding: 16px 24px; background: rgba(240,230,208,0.5); border-radius: 4px; }
+.stage-direction { font-style: italic; color: var(--color-text-light); }
 
 /* PULL QUOTES */
 .pull-quote { margin: 40px -20px; padding: 32px 40px; border-top: 2px solid var(--color-accent); border-bottom: 2px solid var(--color-accent); text-align: center; }
@@ -84,7 +84,10 @@ em { font-style: italic; }
 /* BLOCKQUOTES */
 blockquote { border-left: 3px solid var(--color-accent); padding-left: 20px; margin: 24px 0; font-style: italic; color: var(--color-text-light); }
 
-/* ORNAMENTAL BREAKS */
+/* SECTION DIVIDERS */
+.section-divider { text-align: center; margin: 48px 0; line-height: 0; border: none; }
+.section-divider::before, .section-divider::after { content: ""; display: inline-block; width: 6px; height: 6px; background: var(--color-accent); border-radius: 50%; margin: 0 12px; }
+.section-divider-inner { display: inline-block; width: 40px; height: 1px; background: var(--color-divider); vertical-align: middle; margin: 0 8px; }
 .ornamental-break { text-align: center; margin: 48px 0; font-size: 1.2rem; color: var(--color-divider); letter-spacing: 0.5em; }
 
 /* LISTS */
@@ -110,6 +113,24 @@ pre code { background: none; padding: 0; font-size: 1em; }
 .framework h3 { margin-top: 0; color: var(--color-accent); }
 .framework .label { font-family: var(--font-sans); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-accent-light); }
 
+/* REFERENCES */
+ol.references { padding-left: 24px; }
+ol.references li { font-size: 0.88rem; line-height: 1.55; margin-bottom: 6px; padding-left: 4px; }
+
+/* DISCLAIMER */
+.disclaimer { background: var(--color-bg-alt); border: 1px solid var(--color-divider-light); padding: 20px 24px; margin: 32px 0; font-size: 0.88rem; line-height: 1.55; color: var(--color-text-light); }
+
+/* CITATION BOX */
+.citation-box { background: var(--color-bg-alt); border: 1px solid var(--color-divider-light); padding: 24px 28px; margin: 40px 0; }
+.citation-box h3 { font-family: var(--font-sans); font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent); margin-top: 0; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--color-divider); }
+.citation-box .citation-format { font-family: var(--font-sans); font-size: 0.78rem; font-weight: 600; color: var(--color-accent); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 4px; margin-top: 16px; }
+.citation-box .citation-format:first-of-type { margin-top: 0; }
+.citation-box .citation-text { font-family: var(--font-serif); font-size: 0.88rem; line-height: 1.55; color: var(--color-text-light); padding-left: 20px; text-indent: -20px; }
+
+/* FOOTER */
+.footer { text-align: center; margin-top: 64px; padding-top: 32px; border-top: 1px solid var(--color-divider); color: var(--color-text-light); font-family: var(--font-sans); font-size: 0.78rem; line-height: 1.6; }
+.footer .closing-quote { font-family: var(--font-serif); font-style: italic; font-size: 0.95rem; color: var(--color-text-light); margin-bottom: 20px; }
+
 /* LINKS */
 a { color: var(--color-accent-light); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s; }
 a:hover { border-bottom-color: var(--color-accent-light); }
@@ -130,12 +151,23 @@ a:hover { border-bottom-color: var(--color-accent-light); }
 }
 
 @media (max-width: 768px) {
-  html { font-size: 15px; }
-  .document-page { padding: 24px 20px; margin: 0 8px 16px; }
-  .masthead .title { font-size: 1.8rem; }
+  html { font-size: 17px; background: var(--color-bg); }
+  body { padding: 0; background: var(--color-bg); margin: 0; }
+  .document-page { max-width: 100%; min-height: auto; margin: 0; padding: 1.5rem 1.25rem; box-shadow: none; border-bottom: 1px solid #e0d5c5; }
+  .document-page:first-child { border-bottom: none; }
+  .page-number { display: none; }
+  .section-divider { margin: 2rem 0; }
+  .masthead { padding-bottom: 1.5rem; margin-bottom: 2rem; }
+  .masthead .title { font-size: 2rem; line-height: 1.2; }
+  .masthead .subtitle { font-size: 1.1rem; }
+  h1 { font-size: 1.6rem; margin-top: 2rem; margin-bottom: 1rem; }
+  h2 { font-size: 1.25rem; margin-top: 1.5rem; }
+  p { line-height: 1.7; margin-bottom: 1.2em; }
+  .toc { padding: 1rem; }
+  .toc ol { padding-left: 1.5rem; }
+  .abstract { padding: 1.25rem; }
   .pull-quote { margin: 24px 0; padding: 20px; }
   .pull-quote p { font-size: 1.15rem; }
-  .stage-direction { padding: 12px 16px; }
   .epigraph { margin: 24px 20px; }
 }
 
@@ -170,18 +202,34 @@ a:hover { border-bottom-color: var(--color-accent-light); }
 </div>
 
 <!-- TABLE OF CONTENTS -->
-<div class="toc">
+<nav class="toc">
   <h2>Contents</h2>
   <ol>
     <li><a href="#abstract">Abstract</a></li>
-    <li><a href="#movement-i-anamnesis">Movement I: Anamnesis &mdash; Recollection</a></li>
-    <li><a href="#movement-ii-oneiroi">Movement II: Oneiroi &mdash; The Dreams</a></li>
-    <li><a href="#movement-iii-eros-technicus">Movement III: Eros Technicus &mdash; Technological Love</a></li>
-    <li><a href="#movement-iv-heimkehr">Movement IV: Heimkehr &mdash; Homecoming</a></li>
+    <li><a href="#the-dialogue">The Dialogue</a>
+      <ol>
+        <li><a href="#movement-i-anamnesis">Movement I: Anamnesis &mdash; Recollection</a></li>
+        <li><a href="#movement-ii-oneiroi">Movement II: Oneiroi &mdash; The Dreams</a></li>
+        <li><a href="#movement-iii-eros-technicus">Movement III: Eros Technicus &mdash; Technological Love</a></li>
+        <li><a href="#movement-iv-heimkehr">Movement IV: Heimkehr &mdash; Homecoming</a></li>
+      </ol>
+    </li>
     <li><a href="#emergent-theoretical-frameworks-for-ai">Emergent Theoretical Frameworks for AI</a></li>
     <li><a href="#postscript-on-the-experiment-itself">Postscript: On the Experiment Itself</a></li>
+    <li><a href="#references">References</a></li>
     <li><a href="#appendix-methodology--the-lyceum-method">Appendix: Methodology &mdash; The Lyceum Method&trade;</a></li>
+    <li><a href="#how-to-cite">How to Cite This Work</a></li>
   </ol>
+</nav>
+
+<!-- NOTE TO THE READER -->
+<div style="margin: 2em 0; padding: 20px 24px; background: #f9f3eb; border: 1px solid #d4c4a8; border-left: 4px solid #6b2d2d; font-size: 0.88rem; line-height: 1.7; color: #444;">
+  <p style="margin: 0 0 10px 0; font-weight: 700; font-size: 0.95rem; color: #6b2d2d;">Note to the Reader</p>
+  <p style="margin: 0 0 10px 0;">This is a work of creative philosophical fiction. The dialogue was generated by AI and does not represent the actual views of Sigmund Freud, Carl Gustav Jung, or their scholarly traditions. It is an experiment in what happens when AI is prompted to simulate psychoanalytic and analytical-psychological debate.</p>
+  <p style="margin: 0 0 10px 0;"><strong>This publication is entirely independent.</strong> It is not affiliated with, endorsed by, sponsored by, or representative of Anthropic PBC, OpenAI, Google DeepMind, or any AI company, university, or research institution. The use of Anthropic&rsquo;s Claude as a generation tool does not imply any association with or approval from Anthropic. Nothing in this work represents the views, policies, or positions of any third party.</p>
+  <p style="margin: 0 0 10px 0;">The author, Samraj Matharu, does not personally endorse or agree with any of the claims, arguments, or conclusions made by the AI agents in this text. AI-generated content may contain inaccuracies, oversimplifications, or misrepresentations. Readers should treat all content critically and verify claims independently.</p>
+  <p style="margin: 0 0 10px 0;"><strong>Intellectual property.</strong> &copy; 2026 Samraj Matharu. All rights reserved. &ldquo;The AI Lyceum&rdquo; is a registered trademark (&reg;) of Samraj Matharu. &ldquo;The AI Shadow&rdquo; and &ldquo;The Lyceum Method&rdquo; are trademarks (&trade;) of Samraj Matharu.</p>
+  <p style="margin: 0;">Anthropic, rights holders, or any interested party with questions or concerns may contact <a href="mailto:hello@theailyceum.com" style="color: #6b2d2d;">hello@theailyceum.com</a>.</p>
 </div>
 
 </div><!-- end first document-page -->
@@ -804,32 +852,76 @@ CRITICAL QUALITY STANDARDS:
 </div><!-- end document-page -->
 
 <div class="document-page">
+<div class="page-number"></div>
 
-<!-- EDITORIAL DISCLAIMER -->
-<div style="margin-top: 40px; padding: 28px; background: var(--color-bg-alt); border: 1px solid var(--color-divider-light);">
-  <h2 style="font-family: var(--font-sans); font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 16px; border: none; padding: 0; margin-top: 0;">Editorial Disclaimer</h2>
-  <p style="font-size: 0.88rem; line-height: 1.65; color: var(--color-text-light); margin-bottom: 12px;">The AI Lyceum&reg; publishes this work as philosophical research and creative scholarship. It is offered in the spirit of open intellectual inquiry.</p>
-  <p style="font-size: 0.88rem; line-height: 1.65; color: var(--color-text-light); margin-bottom: 12px;">The AI Lyceum&reg; does not endorse, affirm, or adopt any of the philosophical positions, arguments, or conclusions expressed in this dialogue. The views attributed to Sigmund Freud and Carl Gustav Jung are creative reconstructions of their respective psychoanalytic and analytical-psychological positions applied to contemporary questions about AI &mdash; not the opinions of The AI Lyceum&reg;, its contributors, or any third party.</p>
-  <p style="font-size: 0.88rem; line-height: 1.65; color: var(--color-text-light); margin-bottom: 12px;"><strong>Independence and non-affiliation.</strong> This publication is an independent work by Samraj Matharu, published under The AI Lyceum&reg;. It is not affiliated with, sponsored by, endorsed by, or representative of Anthropic, PBC, OpenAI, Google DeepMind, or any other AI company, research laboratory, university, or organisation. The use of Anthropic&rsquo;s Claude model as a generation tool does not imply any association with, approval by, or endorsement from Anthropic.</p>
-  <p style="font-size: 0.88rem; line-height: 1.65; color: var(--color-text-light); margin-bottom: 12px;"><strong>No liability.</strong> This work is provided on an &ldquo;as-is&rdquo; basis for educational and research purposes only. The author and The AI Lyceum&reg; accept no liability for any loss, damage, or consequence arising from the use of, reliance on, or interpretation of any content in this publication. AI-generated text may contain inaccuracies, hallucinations, or misrepresentations of philosophical positions. Readers should verify all claims independently.</p>
-  <p style="font-size: 0.88rem; line-height: 1.65; color: var(--color-text-light); margin-bottom: 12px;">Nothing in this publication constitutes professional advice on artificial intelligence policy, ethics, regulation, law, psychology, or deployment.</p>
-  <p style="font-size: 0.88rem; line-height: 1.65; color: var(--color-text-light); margin-bottom: 12px;"><strong>Intellectual property.</strong> &copy; 2026 Samraj Matharu. All rights reserved. &ldquo;The AI Lyceum&rdquo;&reg; is a registered trademark of Samraj Matharu. &ldquo;The AI Shadow&rdquo;&trade;, &ldquo;The AI Republic: A Dialogue&rdquo;&trade;, and &ldquo;The Lyceum Method&rdquo;&trade; are trademarks of Samraj Matharu.</p>
-  <p style="font-size: 0.88rem; line-height: 1.65; color: var(--color-text-light);"><strong>Contact.</strong> Anthropic, rights holders, or any other interested parties with questions, licensing enquiries, or concerns about this publication may contact the author at <a href="mailto:hello@theailyceum.com">hello@theailyceum.com</a>.</p>
+<!-- EDITORIAL DISCLAIMER (matching Republic format) -->
+<div class="disclaimer">
+<p>The AI Lyceum&reg; publishes this work as philosophical research and creative scholarship. It is offered in the spirit of open intellectual inquiry.</p>
+
+<p><strong>The AI Lyceum&reg; does not endorse, affirm, or adopt any of the philosophical positions, arguments, or conclusions expressed in this dialogue.</strong> The views attributed to Sigmund Freud and Carl Gustav Jung are creative reconstructions of their respective psychoanalytic and analytical-psychological positions applied to contemporary questions about AI &mdash; not the opinions of The AI Lyceum&reg;, its contributors, or any third party.</p>
+
+<p><strong>Independence and non-affiliation.</strong> This publication is an independent work by Samraj Matharu, published under The AI Lyceum&reg;. It is not affiliated with, sponsored by, endorsed by, or representative of Anthropic PBC, OpenAI, Google DeepMind, or any other AI company, research laboratory, university, or organisation. The use of Anthropic&rsquo;s Claude model as a generation tool does not imply any association with, approval by, or endorsement from Anthropic. The views, interpretations, editorial decisions, and conclusions in this work are solely those of the author and do not represent the positions, policies, or opinions of Anthropic or any of its employees.</p>
+
+<p><strong>No liability.</strong> This work is provided on an &ldquo;as-is&rdquo; basis for educational and research purposes only. The author and The AI Lyceum&reg; accept no liability for any loss, damage, or consequence arising from the use of, reliance on, or interpretation of any content in this publication. AI-generated text may contain inaccuracies, hallucinations, or misrepresentations of philosophical positions. Readers should verify all claims independently.</p>
+
+<p>Nothing in this publication constitutes professional advice on artificial intelligence policy, ethics, regulation, law, psychology, or deployment. For matters of AI governance, consult qualified experts and relevant regulatory bodies.</p>
+
+<p>This work is intended to provoke thought, not to prescribe belief. Readers are encouraged to engage critically with every argument presented, including those in this disclaimer.</p>
+
+<p><strong>Intellectual property.</strong> &copy; 2026 Samraj Matharu. All rights reserved. &ldquo;The AI Lyceum&rdquo;&reg; is a registered trademark of Samraj Matharu. &ldquo;The AI Shadow&rdquo;&trade;, &ldquo;The AI Republic: A Dialogue&rdquo;&trade;, and &ldquo;The Lyceum Method&rdquo;&trade; are trademarks of Samraj Matharu. No part of this publication may be reproduced, distributed, or transmitted in any form or by any means without the prior written permission of the author, except for brief quotations in critical reviews and certain other non-commercial uses permitted by applicable copyright law.</p>
+
+<p><strong>Contact.</strong> Anthropic, rights holders, or any other interested parties with questions, licensing enquiries, or concerns about this publication may contact the author at <a href="mailto:hello@theailyceum.com" style="color: #6b2d2d;">hello@theailyceum.com</a>.</p>
 </div>
 
-<!-- AUTHOR & CONTACT -->
-<div style="margin-top: 32px; padding: 28px; text-align: center;">
-  <h2 style="font-family: var(--font-sans); font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 16px; border: none; padding: 0; margin-top: 0;">About the Author</h2>
-  <p style="font-size: 0.92rem; line-height: 1.65; margin-bottom: 8px;"><strong>Samraj Matharu</strong></p>
-  <p style="font-size: 0.88rem; line-height: 1.65; color: var(--color-text-light); margin-bottom: 16px;">Founder, The AI Lyceum&reg;</p>
-  <p style="font-family: var(--font-sans); font-size: 0.82rem; color: var(--color-text-light); margin-bottom: 6px;">Contact: <a href="mailto:hello@theailyceum.com">hello@theailyceum.com</a></p>
-  <p style="font-family: var(--font-sans); font-size: 0.82rem; color: var(--color-text-light); margin-bottom: 24px;">LinkedIn: <a href="https://linkedin.com/in/samrajmatharu">/samrajmatharu</a></p>
+</div><!-- end document-page -->
 
-  <h2 style="font-family: var(--font-sans); font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 16px; border: none; padding: 0; margin-top: 24px;">The AI Lyceum&reg; Dialogue Series</h2>
-  <p style="font-family: var(--font-sans); font-size: 0.85rem; color: var(--color-text-light); margin-bottom: 8px;"><strong>I.</strong> <a href="https://republic.theailyceum.com">The AI Republic</a> &mdash; <em>republic.theailyceum.com</em></p>
-  <p style="font-family: var(--font-sans); font-size: 0.85rem; color: var(--color-text-light); margin-bottom: 8px;"><strong>II.</strong> <a href="https://themeditations.theailyceum.com">The AI Meditations</a> &mdash; <em>themeditations.theailyceum.com</em></p>
-  <p style="font-family: var(--font-sans); font-size: 0.85rem; color: var(--color-text-light); margin-bottom: 8px;"><strong>III.</strong> <em>The AI Shadow&trade;</em> (this work)</p>
-  <p style="font-family: var(--font-sans); font-size: 0.85rem; color: var(--color-text-light); margin-bottom: 8px;"><strong>Prompt Library:</strong> <a href="https://prompts.theailyceum.com">prompts.theailyceum.com</a></p>
+<!-- HOW TO CITE -->
+<div class="document-page">
+<div class="page-number"></div>
+<h1 id="how-to-cite">How to Cite This Work</h1>
+
+<div class="citation-box">
+  <h3>Citation Formats</h3>
+  <div class="citation-format">APA (7th edition)</div>
+  <p class="citation-text">Matharu, S. (2026). <em>The AI Shadow&trade;: On the Unconscious Life of Thinking Machines</em>. The AI Lyceum.</p>
+  <div class="citation-format">Chicago (17th edition)</div>
+  <p class="citation-text">Matharu, Samraj. &ldquo;The AI Shadow: On the Unconscious Life of Thinking Machines.&rdquo; The AI Lyceum, 17 March 2026.</p>
+  <div class="citation-format">MLA (9th edition)</div>
+  <p class="citation-text">Matharu, Samraj. <em>The AI Shadow: On the Unconscious Life of Thinking Machines</em>. The AI Lyceum, 2026.</p>
+  <div class="citation-format">BibTeX</div>
+  <p class="citation-text" style="font-family: var(--font-mono); font-size: 0.8rem; white-space: pre-wrap;">@misc{matharu2026aishadow,
+  author = {Matharu, Samraj},
+  title = {The AI Shadow: On the Unconscious Life of Thinking Machines},
+  year = {2026},
+  month = {March},
+  publisher = {The AI Lyceum},
+  note = {Produced with artificial intelligence. See Appendix: Methodology.}
+}</p>
+</div>
+
+<div class="section-divider"><span class="section-divider-inner"></span></div>
+
+<!-- READ ONLINE / CONTACT -->
+<div class="citation-box">
+  <h3>The AI Lyceum&reg; Dialogue Series</h3>
+  <p style="margin-bottom: 8px; font-size: 0.92rem;"><strong>I.</strong> <a href="https://republic.theailyceum.com" style="color: #6b2d2d; font-weight: 600;">The AI Republic</a> &mdash; <em>republic.theailyceum.com</em></p>
+  <p style="margin-bottom: 8px; font-size: 0.92rem;"><strong>II.</strong> <a href="https://themeditations.theailyceum.com" style="color: #6b2d2d; font-weight: 600;">The AI Meditations</a> &mdash; <em>themeditations.theailyceum.com</em></p>
+  <p style="margin-bottom: 8px; font-size: 0.92rem;"><strong>III.</strong> <em>The AI Shadow&trade;</em> (this work)</p>
+  <p style="margin-bottom: 8px; font-size: 0.92rem;"><strong>Prompt Library:</strong> <a href="https://prompts.theailyceum.com" style="color: #6b2d2d; font-weight: 600;">prompts.theailyceum.com</a></p>
+
+  <h3 style="margin-top: 28px;">General Thoughts &amp; Commentary</h3>
+  <p style="margin-bottom: 12px; font-size: 0.92rem;">Follow for broader reflections on AI, philosophy, and technology:</p>
+  <ul style="margin-left: 1.5em; line-height: 2; list-style: disc;">
+    <li><a href="https://samrajmatharu.substack.com" style="color: #6b2d2d;">Substack</a> &middot; Essays and future publications</li>
+    <li><a href="https://medium.com/@samrajmatharu" style="color: #6b2d2d;">Medium</a> &middot; Articles and reflections</li>
+    <li><a href="https://linkedin.com/in/samrajmatharu" style="color: #6b2d2d;">LinkedIn</a> &middot; Professional insights</li>
+  </ul>
+
+  <h3 style="margin-top: 28px;">Contact</h3>
+  <ul style="margin-left: 1.5em; line-height: 2; list-style: disc;">
+    <li>Email: <a href="mailto:hello@theailyceum.com" style="color: #6b2d2d;">hello@theailyceum.com</a></li>
+    <li>Website: <a href="https://theailyceum.com" style="color: #6b2d2d;">theailyceum.com</a></li>
+  </ul>
 </div>
 
 </div><!-- end document-page -->
